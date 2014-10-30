@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+    <style>
+.sray {
+  transform-origin:50% 100%;
+width: 0;
+height: 0;
+border-style: solid;
+border-width: 0 15px 180px 15px;
+position:absolute;
+}
+
+.jkolor {
+  border-color: transparent transparent rgba(243,40,40,1) transparent;
+}
+
+.ikolor{
+  border-color: transparent transparent rgba(123, 199, 53, 1) transparent;
+}
+
+.koloclass{
+  position:absolute;
+  top:50px;
+  left:75vw;
+  border-radius:50%;
+  transform-origin:50% 50%;
+}
+
+#kolko {
+  width:150px;
+  height:150px;
+  transform:rotate(20deg);  
+  background-color:rgba(243,40,40,1);
+  }
+
+#kolko1 {
+  width:150px;
+  height:150px;
+  background-color:black;}
+
+
+#kolkow{
+  top:57px;
+  left:75.6vw;
+  width:135px;
+  height:135px;
+  background-color:rgba(123, 199, 53, 1);
+}
+
+
+
+#pray{top:-90%;
+left:40%}
+
+#dray{transform:rotate(40deg);
+  top:-80%;
+left:50%}
+
+#tray{transform:rotate(110deg);
+  top:-75%;
+  left:49%;}
+
+#cray{transform:rotate(-45deg);
+  top:-80%;
+left:25%}
+
+#fray{transform:rotate(-75deg);
+  top:-60%;
+left:50%}
+
+#sray{transform:rotate(-125deg);
+  top:-70%;
+left:30%}
+
+#ssray{transform:rotate(-165deg);
+  top:-70%;
+left:30%}
+
+#eray{transform:rotate(175deg);
+  top:-40%;
+left:50%}
+
+#nray{transform:rotate(135deg);
+  top:-60%;
+left:50%}
+
+.pklas{font-family: fascinate, sans-serif;
+  color:lightgray;
+  font-size:10vw;
+  margin:0px;
+  padding:0px;
+ }
+
+
+.dupsko{
+  height:25vh;
+  width:100%;
+  background-color:rgba(243,70,40,1);
+  overflow:hidden;
+  margin:0px;
+  padding:0px;
+  position:relative;
+  border-style: dotted;
+  border-top-style: solid;
+  border-color: rgba(123, 159, 53, 1); 
+  border-radius:20px;
+  border-width:20px;
+}
+.wypelniacz{
+  border-color: rgba(34, 102, 102, 0); 
+  border-style: solid;
+  border-radius:20px;
+  border-width:20px;
+  height:25vh;
+  width:100%;
+  background-color:rgba(34, 102, 102, 0.3);
+  overflow:hidden;
+  margin:0px;
+  padding:0px;
+  position:relative;
+}
+
+#pelny{
+  background-color:rgba(34, 102, 102, 1);
+}
+body,html {
+  height:100%;
+  //width:100%;
+  margin:0;
+  margin-right:20px;
+  //padding-right:1px;
+}
+
+#dol{position:fixed;
+  z-index:1;
+  border-top-left-radius:20px;
+  border-top-right-radius:20px;
+  background-color:rgba(34, 102, 102, 0.7);
+  bottom:0px;
+  height:28vh;
+  width:100%;}
+
+.plusnew{
+  position:absolute;
+  z-index:1;
+  top:10%;
+  left:65vw;
+  width:300px;
+  height:80%;
+  border-radius:50%;
+  background-color:rgba(34, 102, 102, 1); 
+}
+
+.pion{
+  position:absolute;
+  top:10%;
+  left:40%;
+  width:20%;
+  height:80%;
+  background-color:lightgray;
+}
+
+.poziom{
+  position:absolute;
+  top:40%;
+  left:10%;
+  width:80%;
+  height:20%;
+  background-color:lightgray;
+}
+        </style>
+<title></title>
+</head>
+<body>
+<script src="//use.edgefonts.net/fascinate.js"></script>
+<script src="//use.edgefonts.net/cooper-black-std;dorsa.js"></script>
+<div class='wypelniacz' id='gornywyp'></div>
+<div  class='dupsko'><p class="pklas">Cokolwiek</p><div class='plusnew'><div class='poziom'></div><div class='pion'></div></div></div>
+<div class='wypelniacz'></div>
+<div id="dol">
+  
+  <div id="kolko1" class='koloclass'>
+  <div id="pray" class="sray ikolor"></div>
+  <div id="dray" class="sray ikolor"></div>
+  <div id="tray" class="sray ikolor"></div>
+  <div id="cray" class="sray ikolor"></div>
+  <div id="fray" class="sray ikolor"></div>
+  <div id="sray" class="sray ikolor"></div>
+  <div id="ssray" class="sray ikolor"></div>
+  <div id="eray" class="sray ikolor"></div>
+  <div id="nray" class="sray ikolor"></div>
+ </div>
+  
+  <div id="kolko" class='koloclass'>
+  <div id="pray" class="sray jkolor"></div>
+  <div id="dray" class="sray jkolor"></div>
+  <div id="tray" class="sray jkolor"></div>
+  <div id="cray" class="sray jkolor"></div>
+  <div id="fray" class="sray jkolor"></div>
+  <div id="sray" class="sray jkolor"></div>
+  <div id="ssray" class="sray jkolor"></div>
+  <div id="eray" class="sray jkolor"></div>
+  <div id="nray" class="sray jkolor"></div>
+  </div>
+  <div id="kolkow" class='koloclass'></div>
+  
+
+</div>
+
+</body>
+</html>

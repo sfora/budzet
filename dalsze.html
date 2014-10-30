@@ -1,0 +1,163 @@
+<!doctype HTML>
+<html lang="pl">
+<meta charset="UTF-8" />
+
+<style>
+    .dupaclass {
+        position: absolute;
+        height: 180px;
+        width: 250px;
+        text-align: center;
+        border-radius: 25px;
+        transition: left 3s ease-out 0s, top 3s ease-out 0s;
+    }
+    .parag {
+        position: relative;
+        overflow: auto;
+        background-color: white;
+        left: 10px;
+        top: 0px;
+        height: 80px;
+        width: 220px;
+        padding: 5px;
+        border-radius: 16px;
+         border-bottom-right-radius:0px;
+        border-bottom-left-radius:0px;
+    }
+    .paragtime {
+        font-family: 'Exo 2', sans-serif;
+        position: relative;
+        overflow: auto;
+        font-size: 22px;
+        //background-color: rgba(43,249,46,1);
+        background-color: lightgrey;
+        margin-top: 0px;
+        left: 10px;
+        top: 0px;
+        height: 40px;
+        width: 220px;
+        padding: 5px;
+        border-radius: 16px;
+        border-top-right-radius: 0px;
+        border-top-left-radius: 0px;
+    }
+    #formularz {
+        position: fixed;
+        bottom: 0px;
+        background-color: rgba(51, 102, 255, 0.65);
+        height: 220px;
+        width: 100%;
+        pointer-events: none;
+    }
+    #tit {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 300px;
+        pointer-events: auto;
+    }
+    #tre {
+        position: absolute;
+        top: 20px;
+        left: 330px;
+        height: 150px;
+        width: 250px;
+        pointer-events: auto;
+    }
+    #data {
+        position: absolute;
+        top: 20px;
+        left: 590px;
+        pointer-events: auto;
+    }
+    #dodawaj {
+        position: absolute;
+        top: 100px;
+        left: 20px;
+        pointer-events: auto;
+    }
+    #liczby {
+        position: absolute;
+        left: 800px;
+        top: 20px;
+        font-family: monospace;
+        font-size: 130px;
+        color: rgba(51, 102, 255, 0.85);
+    }
+    #glowny {
+        position: relative;
+        top: 10px;
+        background-color: gray;
+    }
+    #green {
+        background-color: green;
+        margin-right: 20px;
+    }
+    #orange {
+        background-color: orange;
+        margin-right: 20px;
+    }
+    #red {
+        background-color: red;
+        margin-right: 20px;
+    }
+</style>
+
+<script src="./logikanowa.js"></script>
+
+<body>
+    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+    <script>
+        var memor = new Przypominacz();
+
+        window.onload = function () {
+            var glownyel = document.getElementById("glowny");
+        
+            var whatever = {};
+            var tab = zapiszpobierz("GET", "./notkiget");
+            memor.thisuser = zapiszpobierz("GET", "./dawajusera");
+            for (var keys in tab) {
+                var notkat = new Notka();
+                for (key in tab[keys]) {
+                    notkat[key] = tab[keys][key]
+                }
+                memor.notatki.push(notkat);
+
+            }
+            memor.populate();
+        }
+
+    
+        var x = setInterval(memor.updateall.bind(memor), 2000);
+        var d = setInterval(memor.changepos.bind(memor), 6000);
+    </script>
+    <div id="glowny"></div>
+    <div id="formularz">
+        <form>
+            <input type="text" id="tit" placeholder="Tytuł"></input>
+            <textarea id="tre" placeholder="Treść"></textarea>
+            <input type="text" id="data" placeholder="Deadline dd.mm"></input>
+        </form>
+        <div id="dodawaj">
+            <button id="green" onclick="memor.addMemo('green')">+</button>
+            <button id="orange" onclick="memor.addMemo('orange')">+</button>
+            <button id="red" onclick="memor.addMemo('red')">+</button>
+            <button>Coś</button>
+        </div>
+        <div id="liczby"></div>
+    </div>
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
