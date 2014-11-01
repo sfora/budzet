@@ -11,7 +11,7 @@ border-style: solid;
 border-width: 0 15px 180px 15px;
 position:absolute;
 }
-
+/*cos tam*/
 .jkolor {
   border-color: transparent transparent rgba(243,40,40,1) transparent;
 }
@@ -27,6 +27,19 @@ position:absolute;
   border-radius:50%;
   transform-origin:50% 50%;
 }
+
+.koloclass1{
+ 
+ -webkit-animation: mymove 0.8s ease-out 1;
+  -moz-animation: mymove 0.8s ease-out 1;
+
+}
+.koloclassa{
+ 
+ -webkit-animation: mymoved 0.8s ease-out 1;
+  -moz-animation: mymoved 0.8s ease-out 1;
+}
+
 
 #kolko {
   width:150px;
@@ -170,15 +183,116 @@ body,html {
   height:20%;
   background-color:lightgray;
 }
+
+.glowny{
+position: absolute;
+    width: 100%;
+    top:0px;
+    left:0px;
+    margin: 0px;
+    padding: 0px;
+
+}
+        
+#dolnywyp{
+  position:fixed;
+  
+  border-top-left-radius:20px;
+  border-top-right-radius:20px;
+  background-color:rgba(34, 102, 102, 0.7);
+  bottom:0px;
+  height:24vh;
+  width:100%;
+}
+        
+        #formularz{
+  position:fixed;
+  box-shadow:-3px 20px 12px 4px rgba(50, 50, 50, 0.75);
+  width:60%;
+  height:60vh;
+  background-color:lightgray;
+  top:-2000px;
+  left:20%;
+  z-index:1;
+}
+
+.inputy{
+  font-size:30px;
+  box-shadow:-3px 20px 12px 4px rgba(50, 50, 50, 0.75);
+  
+  
+}
+.centered{
+  position:relative;
+  width:60%;
+  left:20%;
+}
+@-webkit-keyframes mymove {
+  0%   { transform: rotate(0deg);}
+  50%   { transform: rotate(20deg);}
+  100% { transform: rotate(0deg); }
+}
+
+@-webkit-keyframes mymoved {
+  0%   { transform: rotate(20deg);}
+  50%   { transform: rotate(0deg);}
+  100% { transform: rotate(20deg); }
+}
+
+@-moz-keyframes mymove {
+  0%   { transform: rotate(0deg);}
+  50%   { transform: rotate(20deg);}
+  100% { transform: rotate(0deg); }
+}
+
+@-moz-keyframes mymoved {
+  0%   { transform: rotate(20deg);}
+  50%   { transform: rotate(0deg);}
+  100% { transform: rotate(20deg); }
+}
         </style>
 <title></title>
 </head>
 <body>
 <script src="//use.edgefonts.net/fascinate.js"></script>
 <script src="//use.edgefonts.net/cooper-black-std;dorsa.js"></script>
-<div class='wypelniacz' id='gornywyp'></div>
-<div  class='dupsko'><p class="pklas">Cokolwiek</p><div class='plusnew'><div class='poziom'></div><div class='pion'></div></div></div>
-<div class='wypelniacz'></div>
+    <script src="./logika.js"></script>
+    <script>
+    window.onload = function (){
+        var elem = document.getElementById('kolkow');
+    elem.addEventListener("click", dupa);
+    
+function dupa(){
+  var elem=document.getElementById('kolko1');
+  var elemd=document.getElementById('kolko');
+   elem.classList.remove('koloclass1');
+   elemd.classList.remove('koloclassa');
+ elem.offsetWidth = elem.offsetWidth;
+ elemd.offsetWidth = elemd.offsetWidth;
+  elem.classList.add('koloclass1');
+  elemd.classList.add('koloclassa');
+  var eleme = document.getElementById('formularz');
+  eleme.style.zIndex = "3";
+  eleme.style.top = "200px"
+}}
+    </script>
+    <div id='formularz' class='centered'>
+  <br>
+  <br>
+  <br> 
+  <input class='centered inputy' type="text" name="fname"><br>
+  <br>
+  <br>
+   <input class='centered inputy' type="text" name="lname"><br>
+  <br>
+  <br>
+  <br>
+  <input type="submit" value="Submit" class='centered'>
+  
+</div>
+<div class="glowny" id="tenglowny">
+    <div class='wypelniacz' id='gornywyp'></div>
+<div class='wypelniacz' id='dolnywyp'></div>
 <div id="dol">
   
   <div id="kolko1" class='koloclass'>
@@ -208,6 +322,6 @@ body,html {
   
 
 </div>
-
+</div>
 </body>
 </html>
