@@ -2,17 +2,17 @@ Zakup.prototype.constructor = Zakup;
 Budzet.prototype.constructor = Budzet;
 
 function Zakup(co,poile){
-    var datan = new Date()
-    var dzien = datan.getDate();
-    var dzient = datan.getDay();
-    var godzina = datan.getHours();
-    var minuta = datan.getMinutes();
-    var sekunda = datan.getSeconds();
-    var miesiac = datan.getMonth();
-    var rok = datan.getFullYear();
-    var co = co;
-    var poile = poile;
-    var id = datan.getTime();
+    var datan = new Date();
+    this.dzien = datan.getDate();
+    this.dzient = datan.getDay();
+    this.godzina = datan.getHours();
+    this.minuta = datan.getMinutes();
+    this.sekunda = datan.getSeconds();
+    this.miesiac = datan.getMonth();
+    this.rok = datan.getFullYear();
+    this.co = co;
+    this.poile = poile;
+    this.id = datan.getTime();
     
 }
 
@@ -21,22 +21,43 @@ var budzetdoc;
     var budzetdzis;
     var budzetweek;
     var budzetmonth;
-    var wyswietlane = [];
-    var sortyjakies = [];
-
-
-
-
-
-
+    this.wyswietlane = [];
+    this.sortyjakies = [];
 }
 
     
     
 Budzet.prototype.dodajzakup = function (){
-
+var elemco = document.getElementById("co").value;
+var elempoile = document.getElementById("poile").value;
+    console.log(elemco + "" + elempoile);
+     var eleme = document.getElementById('formularz');
+  eleme.style.zIndex = "-3";
+  eleme.style.top = "-1200px";
+    var zakupmaly = new Zakup(elemco,elempoile);
+    console.log(zakupmaly.dzien + " " + zakupmaly.co + " " + zakupmaly.poile);
+    
 
 
 
 
 };
+
+function dupa(nowy){
+  var elem=document.getElementById('kolko1');
+  var elemd=document.getElementById('kolko');
+   elem.classList.remove('koloclass1');
+   elemd.classList.remove('koloclassa');
+ elem.offsetWidth = elem.offsetWidth;
+ elemd.offsetWidth = elemd.offsetWidth;
+  elem.classList.add('koloclass1');
+  elemd.classList.add('koloclassa');
+  var eleme = document.getElementById('formularz');
+  eleme.style.zIndex = "3";
+  eleme.style.top = "200px";
+    if(nowy==1)
+    {   console.log("nowy z dupy="+nowy)
+       }
+    else
+    {console.log("dopisz to wkońcu")}
+}

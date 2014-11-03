@@ -259,35 +259,28 @@ position: absolute;
     <script src="./logika.js"></script>
     <script>
     window.onload = function (){
+        budzet = new Budzet();
+        var nowy = 1;
         var elem = document.getElementById('kolkow');
-    elem.addEventListener("click", dupa);
+        var elemsab = document.getElementById('sabmit');
+    elem.addEventListener("click", dupa.bind(null,nowy));
+        elemsab.addEventListener("click", budzet.dodajzakup)
+        
     
-function dupa(){
-  var elem=document.getElementById('kolko1');
-  var elemd=document.getElementById('kolko');
-   elem.classList.remove('koloclass1');
-   elemd.classList.remove('koloclassa');
- elem.offsetWidth = elem.offsetWidth;
- elemd.offsetWidth = elemd.offsetWidth;
-  elem.classList.add('koloclass1');
-  elemd.classList.add('koloclassa');
-  var eleme = document.getElementById('formularz');
-  eleme.style.zIndex = "3";
-  eleme.style.top = "200px"
-}}
+}
     </script>
     <div id='formularz' class='centered'>
   <br>
   <br>
   <br> 
-  <input class='centered inputy' type="text" name="fname"><br>
+  <input class='centered inputy' type="text" name="co" id='co'><br>
   <br>
   <br>
-   <input class='centered inputy' type="text" name="lname"><br>
+   <input class='centered inputy' type="text" name="poile" id='poile'><br>
   <br>
   <br>
   <br>
-  <input type="submit" value="Submit" class='centered'>
+  <input type="submit" value="Submit" class='centered' id='sabmit'>
   
 </div>
 <div class="glowny" id="tenglowny">
