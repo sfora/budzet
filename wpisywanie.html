@@ -1,0 +1,90 @@
+<!doctype HTML>
+<html lang="pl">
+<meta charset="UTF-8" />
+<style>
+    #cos {
+        background: linear-gradient(44deg, green, red);
+    }
+    #nad {
+        position: relative;
+        background-color: rgba(255, 255, 255, 0.3);
+        ;
+        border-style: solid;
+        border-width: thick;
+        border-radius: 16px;
+        border-bottom-color: red;
+        border-left-color: green;
+        border-right-color: yellow;
+        width: 300px;
+        height: 300px;
+        margin-bottom: 25%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 25%;
+    }
+    #user {
+        position: relative;
+        margin-top: 25%;
+        margin-left: 50px;
+        margin-right: 50px;
+        width: 200px;
+    }
+    #pass {
+        position: relative;
+        margin-left: 50px;
+        margin-right: 50px;
+        width: 200px;
+    }
+    #postwpis {
+        position: relative;
+        margin-left: 40%;
+        margin-right: 40%;
+        width: 100px;
+    }
+}
+</style>
+<script src="./logika.js"></script>
+
+<body id="cos">
+    <script>
+        var elem = document.getElementById("cos");
+
+        var obrot = 44;
+
+
+
+        function obracaj() {
+            elem.style.background = "linear-gradient(" + obrot + "deg, green, red)"
+            obrot++
+            if (obrot == 359) {
+                obrot = 0
+            }
+
+            window.requestAnimationFrame(obracaj);
+
+
+
+
+        }
+
+        window.requestAnimationFrame(obracaj);
+    </script>
+    <div id="nad">
+        <form action="/wpis" method="post">
+            <div id="user">
+                <input type="text" name="username" placeholder="user" />
+                <br/>
+            </div>
+            <div id="pass">
+                <input type="password" name="password" placeholder="pass" />
+            </div>
+            <div id="postwpis">
+                <input type="submit" value="Submit" />
+            </div>
+        </form>
+
+
+    </div>
+</body>
+
+</html>
